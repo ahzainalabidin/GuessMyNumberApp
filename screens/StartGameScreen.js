@@ -4,7 +4,7 @@ import PrimaryButton from "../components/PrimaryButton";
 const StartGameScreen = () => {
     return (
         <View style={styles.inputContainer}>
-            <TextInput style={styles.numberInput} />
+            <TextInput style={styles.numberInput} maxLength={2} />
             <PrimaryButton>Reset</PrimaryButton>
             <PrimaryButton>Confirm</PrimaryButton>
         </View>
@@ -28,11 +28,13 @@ const styles = StyleSheet.create({
     },
     numberInput: {
         height: 50,
+        width: 50,
         fontSize: 32,
         borderBottomWidth: 2,
         borderBottomColor: '#ddb52f',
         color: '#ddb52f',
         marginVertical: 8,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        textAlign: 'center'
     }
 });
