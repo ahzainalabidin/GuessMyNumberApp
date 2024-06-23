@@ -7,8 +7,8 @@ function pressHandler() {
 const PrimaryButton = ({ children }) => {
     return (
         <Pressable onPress={pressHandler}>
-            <View style={styles.container}>
-                <Text>{children}</Text>
+            <View style={styles.buttonContainer}>
+                <Text style={styles.buttonText}>{children}</Text>
             </View>
         </Pressable>
     );
@@ -17,12 +17,16 @@ const PrimaryButton = ({ children }) => {
 export default PrimaryButton;
 
 const styles = StyleSheet.create({
-    container: {
+    buttonContainer: {
         backgroundColor: '#72063c',
         borderRadius: 28,
         paddingVertical: 8,
         paddingHorizontal: 16,
         margin: 4,
         elevation: 2
+    },
+    buttonText: {
+        color: 'white',
+        textAlign: 'center'
     }
 });
