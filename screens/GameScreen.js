@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Alert, StyleSheet, Text, View } from 'react-native';
 import { useState } from 'react';
 
 import Title from '../components/ui/Title';
@@ -20,17 +20,32 @@ function generateRandomBetween(min, max, exclude) {
 let minBoundary = 1;
 let maxBoundary = 100;
 
-const GameScreen = ({ userNumber }) => {
+const GameScreen = ({ actualNumber }) => {
 
     const initialGuess = generateRandomBetween(
         minBoundary,
         maxBoundary,
-        userNumber
+        actualNumber
     );
 
     const [currentGuess, setCurrentGuess] = useState(initialGuess);
 
     function nextGuessHandler(direction) {
+
+        if (
+            (direction === 'lower' && currentGuess < actualNumber) ||
+            (direction === 'greater' && currentGuess > actualNumber)
+        ) {
+
+            Alert.alert(
+                "Don't lie!",
+                'You know that this is wrong...',
+                [{ text: 'Sorry!', style: 'cancel' }]
+            );
+
+            return;
+
+        }
 
         if (direction === 'lower') {
             maxBoundary = currentGuess;
