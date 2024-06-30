@@ -1,10 +1,11 @@
-import { Alert, StyleSheet, Text, TextInput, View } from "react-native";
+import { Alert, StyleSheet, TextInput, View } from "react-native";
 import { useState } from "react";
 
 import Colors from "../constants/colors";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import Title from "../components/ui/Title";
 import Card from "../components/ui/Card";
+import InstructionText from "../components/ui/InstructionText";
 
 const StartGameScreen = ({ onPickNumber }) => {
 
@@ -42,9 +43,7 @@ const StartGameScreen = ({ onPickNumber }) => {
 
             <Card>
 
-                <Text style={styles.instructionText}>
-                    Enter a Number
-                </Text>
+                <InstructionText>Enter a Number</InstructionText>
 
                 <TextInput
                     style={styles.numberInput}
@@ -82,10 +81,6 @@ const styles = StyleSheet.create({
         flex: 1,
         marginTop: 100,
         alignItems: 'center'
-    },
-    instructionText: {
-        color: Colors.accent500,
-        fontSize: 24
     },
     numberInput: {
         height: 50,
