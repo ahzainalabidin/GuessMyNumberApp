@@ -80,7 +80,9 @@ const GameScreen = ({ actualNumber, onGameOver }) => {
 
             <Card>
 
-                <InstructionText>Higher or Lower?</InstructionText>
+                <InstructionText style={styles.instructionText}>
+                    Higher or Lower?
+                </InstructionText>
 
                 <View style={styles.buttonsContainer}>
 
@@ -111,6 +113,9 @@ const styles = StyleSheet.create({
     screen: {
         flex: 1,
         padding: 24
+    },
+    instructionText: {
+        marginBottom: 12
     },
     buttonsContainer: {
         flexDirection: 'row'
